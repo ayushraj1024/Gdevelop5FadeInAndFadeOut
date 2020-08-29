@@ -204,6 +204,13 @@
         "name": "Mute-1-1.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "file": "speech_20200825144026142.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "speech_20200825144026142.mp3",
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -330,7 +337,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.568
+        "zoomFactor": 0.448
       },
       "objectsGroups": [],
       "variables": [
@@ -341,6 +348,10 @@
         {
           "name": "Volume",
           "value": "0"
+        },
+        {
+          "name": "MusicPointer",
+          "value": ""
         }
       ],
       "instances": [
@@ -493,7 +504,7 @@
               },
               "parameters": [
                 "",
-                "B18_loop.ogg",
+                "speech_20200825144026142.mp3",
                 "0",
                 "yes",
                 "0",
@@ -510,6 +521,52 @@
                 "FadeMusic",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene4MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
               ],
               "subInstructions": []
             }
@@ -715,6 +772,49 @@
             {
               "type": {
                 "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EcrireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene4MusicPointer\"",
+                "MusicChannelPlayingOffset(0)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StopMusicCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "Scene"
               },
               "parameters": [
@@ -751,7 +851,7 @@
               },
               "parameters": [
                 "",
-                "B18_loop.ogg",
+                "speech_20200825144026142.mp3",
                 "0",
                 "yes",
                 "0",
@@ -770,9 +870,64 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene4MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -1314,6 +1469,10 @@
         {
           "name": "FadeMusic",
           "value": "0"
+        },
+        {
+          "name": "MusicPointer",
+          "value": ""
         }
       ],
       "instances": [
@@ -1518,6 +1677,52 @@
                 "FadeMusic",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene5MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
               ],
               "subInstructions": []
             }
@@ -1792,6 +1997,49 @@
             {
               "type": {
                 "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EcrireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene5MusicPointer\"",
+                "MusicChannelPlayingOffset(0)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StopMusicCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "Scene"
               },
               "parameters": [
@@ -1845,6 +2093,52 @@
                 "FadeMusic",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene5MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
               ],
               "subInstructions": []
             }
@@ -2381,7 +2675,16 @@
         "zoomFactor": 0.568
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "name": "FadeMusic",
+          "value": "0"
+        },
+        {
+          "name": "MusicPointer",
+          "value": ""
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -2549,6 +2852,52 @@
                 "FadeMusic",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene6MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
               ],
               "subInstructions": []
             }
@@ -2754,6 +3103,49 @@
             {
               "type": {
                 "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EcrireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene6MusicPointer\"",
+                "MusicChannelPlayingOffset(0)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StopMusicCanal"
+              },
+              "parameters": [
+                "",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "Scene"
               },
               "parameters": [
@@ -2807,6 +3199,52 @@
                 "FadeMusic",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LoadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LireFichierExp"
+              },
+              "parameters": [
+                "\"MusicPointers\"",
+                "\"NewScene6MusicPointer\"",
+                "",
+                "MusicPointer"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModPlayingOffsetMusicChannel"
+              },
+              "parameters": [
+                "",
+                "0",
+                "=",
+                "Variable(MusicPointer)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnloadFile"
+              },
+              "parameters": [
+                "\"MusicPointers\""
               ],
               "subInstructions": []
             }
@@ -3678,6 +4116,142 @@
                 "0",
                 "-",
                 "0.05"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "layers": [
+        {
+          "name": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "New_32scene",
+      "name": "New scene",
+      "oglFOV": 90,
+      "oglZFar": 500,
+      "oglZNear": 1,
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": false,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.448
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Previous",
+          "persistentUuid": "7d95cbef-d10f-4de5-8a31-904abe49cbdc",
+          "width": 0,
+          "x": 31,
+          "y": 533,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "bold": true,
+          "italic": false,
+          "name": "Previous",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "<Previous",
+          "font": "",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Previous",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"New scene4\"",
+                "yes"
               ],
               "subInstructions": []
             }
